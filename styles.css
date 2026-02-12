@@ -486,6 +486,11 @@ img {
     border-radius: 50px;
 }
 
+.game-showcase.gravityshot .coming-soon-badge {
+    background: linear-gradient(90deg, var(--gs-pink), var(--gs-cyan));
+    color: var(--gs-purple);
+}
+
 /* A Helping Hand Showcase */
 .game-showcase.helping-hand {
     background: linear-gradient(135deg, #2d1f3d 0%, #1a2a4a 50%, #2d3a5a 100%);
@@ -616,6 +621,79 @@ img {
 .value-card p {
     font-size: 14px;
     color: var(--color-gray);
+}
+
+/* ===== Projects Section ===== */
+.projects-section {
+    padding: var(--section-padding);
+    background: var(--color-gray-light);
+}
+
+.projects-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    padding: 50px 40px;
+    background: var(--color-white);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-icon {
+    color: var(--color-red);
+    margin-bottom: 25px;
+}
+
+.project-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--color-black);
+}
+
+.project-type {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-red);
+    margin-bottom: 20px;
+}
+
+.project-description {
+    font-size: 15px;
+    color: var(--color-gray);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.project-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-black);
+    border-bottom: 2px solid var(--color-red);
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-link {
+    color: var(--color-red);
 }
 
 /* ===== Contact Section ===== */
