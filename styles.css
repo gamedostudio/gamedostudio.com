@@ -470,8 +470,8 @@ img {
 }
 
 .hero-logo {
-    max-width: 160px;
-    margin: 0 auto var(--space-8);
+    max-width: 800px;
+    margin: 0 auto -100px;
     display: block;
 }
 
