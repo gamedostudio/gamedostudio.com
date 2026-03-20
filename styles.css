@@ -389,6 +389,13 @@ img {
     z-index: 1;
 }
 
+.page-hero .kanji {
+    font-size: 5rem;
+    color: var(--color-red);
+    line-height: 1;
+    margin-bottom: var(--space-4);
+}
+
 .page-hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
