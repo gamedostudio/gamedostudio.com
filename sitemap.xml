@@ -2,7 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gamedostudio.com/</loc>
-    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gamedostudio.com/about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gamedostudio.com/projects</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gamedostudio.com/contact</loc>
+    <priority>0.7</priority>
   </url>
 </urlset>

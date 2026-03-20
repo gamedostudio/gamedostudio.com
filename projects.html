@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameDō Studio — Indie Games & Honest Coverage</title>
-    <meta name="description" content="GameDō Studio is an indie game studio and media company. Explore our games and visit gamedo.live for indie game news and reviews.">
-    <link rel="canonical" href="https://gamedostudio.com/">
-    <meta property="og:title" content="GameDō Studio — Indie Games & Honest Coverage">
-    <meta property="og:description" content="GameDō Studio is an indie game studio and media company. Explore our games and visit gamedo.live for indie game news and reviews.">
-    <meta property="og:url" content="https://gamedostudio.com/">
+    <title>Projects — GameDō Studio</title>
+    <meta name="description" content="Explore GameDō Studio's projects: gamedo.live indie game news platform and our upcoming game titles.">
+    <link rel="canonical" href="https://gamedostudio.com/projects">
+    <meta property="og:title" content="Projects — GameDō Studio">
+    <meta property="og:description" content="Explore GameDō Studio's projects: gamedo.live indie game news platform and our upcoming game titles.">
+    <meta property="og:url" content="https://gamedostudio.com/projects">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,101 +44,116 @@
     </nav>
 
     <main id="main">
-        <!-- Hero Section -->
-        <section class="home-hero">
-            <div class="hero-mesh">
-                <div class="hero-mesh-circle"></div>
-                <div class="hero-mesh-circle"></div>
-                <div class="hero-mesh-circle"></div>
+        <!-- Hero -->
+        <section class="page-hero">
+            <div class="section-container">
+                <h1 class="hero-hidden">Our <span class="accent">Projects</span></h1>
+                <p class="hero-subtitle hero-hidden">From indie game journalism to game development, explore what we're building at GameDō Studio.</p>
             </div>
-            <div class="home-hero-content">
-                <h1 class="hero-hidden">Indie games.<br><span class="accent">Honest coverage.</span></h1>
-                <p class="hero-subtitle hero-hidden">GameDō Studio is an indie game studio and media company dedicated to authentic indie game journalism and unique gaming experiences.</p>
-                <div class="hero-actions hero-hidden">
-                    <a href="https://gamedo.live" class="btn btn-primary" target="_blank" rel="noopener">Visit gamedo.live</a>
-                    <a href="/about" class="btn btn-outline">Learn More</a>
+        </section>
+
+        <!-- Featured Project: gamedo.live -->
+        <section class="featured-project-section">
+            <div class="section-container">
+                <div class="featured-project-card reveal-element">
+                    <div class="featured-project-info">
+                        <div class="badge-row">
+                            <span class="badge badge-featured">Featured Project</span>
+                            <span class="badge badge-live">Live</span>
+                        </div>
+                        <h2>gamedo.live</h2>
+                        <p>Our flagship indie game news and review platform. Delivering bilingual coverage with 300+ pages and 70+ articles in English and French. Built for the community, by the community.</p>
+                        <div class="featured-project-stats">
+                            <span class="stat-dot">300+ Pages</span>
+                            <span class="stat-dot">70+ Articles</span>
+                            <span class="stat-dot">Bilingual EN/FR</span>
+                        </div>
+                        <a href="https://gamedo.live" class="btn btn-primary" target="_blank" rel="noopener">Visit gamedo.live</a>
+                    </div>
+                    <div class="featured-project-image">
+                        <img src="assets/images/gamedo-live.png" alt="gamedo.live — Indie game news and reviews platform">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Three Pillars -->
-        <section class="pillars-section">
+        <!-- Games Grid -->
+        <section class="games-section">
             <div class="section-container">
                 <div class="section-header reveal-element">
-                    <span class="section-badge">What We Do</span>
-                    <h2>Three Pillars</h2>
+                    <span class="section-badge">Game Development</span>
+                    <h2>Upcoming Games</h2>
                 </div>
             </div>
-            <div class="pillars-grid">
-                <div class="pillar-card reveal-element">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <div class="games-grid">
+                <!-- GravityShot -->
+                <div class="game-card gravityshot reveal-element">
+                    <div class="game-card-visual">
+                        <div class="stars-bg"></div>
+                        <img src="assets/images/gravityshot-logo.png" alt="GravityShot">
+                        <div class="orbit-ring"></div>
                     </div>
-                    <h3>Media</h3>
-                    <p>gamedo.live delivers honest indie game news, reviews, and coverage for the community.</p>
-                    <a href="https://gamedo.live" class="pillar-link" target="_blank" rel="noopener">Visit gamedo.live &rarr;</a>
+                    <div class="game-card-content">
+                        <div class="badge-row">
+                            <span class="badge">Puzzle / Physics / Space</span>
+                            <span class="badge">Early 2026</span>
+                        </div>
+                        <h3 class="game-title">GravityShot</h3>
+                        <p class="game-description">Master the forces of gravity in this mesmerizing space puzzle game. Bend trajectories around cosmic objects, collect gravity cores, and navigate through increasingly challenging levels.</p>
+                        <div class="game-actions">
+                            <span class="coming-soon-badge">Coming Early 2026</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="pillar-card reveal-element">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M14 12h4M12 6v12"/></svg>
+
+                <!-- A Helping Hand -->
+                <div class="game-card helping-hand reveal-element">
+                    <div class="game-card-visual">
+                        <img src="assets/images/AHelpingHand-title.png" alt="A Helping Hand">
+                        <div class="shimmer-overlay"></div>
                     </div>
-                    <h3>Games</h3>
-                    <p>Crafting unique indie experiences. Explore our upcoming game projects.</p>
-                    <a href="/projects" class="pillar-link">View Projects &rarr;</a>
+                    <div class="game-card-content">
+                        <div class="badge-row">
+                            <span class="badge">Puzzle / Narrative</span>
+                            <span class="badge">Mid 2026</span>
+                        </div>
+                        <h3 class="game-title">A Helping Hand</h3>
+                        <p class="game-description">Meet your new AI assistant — it only wants to help! Solve puzzles, make choices, and watch as this friendly AI guides humanity toward a brighter future.</p>
+                        <div class="game-actions">
+                            <span class="coming-soon-badge">Coming Mid 2026</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="pillar-card reveal-element">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+
+                <!-- Life of a Regressor -->
+                <div class="game-card regressor reveal-element">
+                    <div class="game-card-visual">
+                        <img src="assets/images/life-of-a-regressor.png" alt="Life of a Regressor">
+                        <div class="shimmer-overlay"></div>
                     </div>
-                    <h3>Community</h3>
-                    <p>Building connections through social media, Discord, and direct engagement.</p>
-                    <a href="/contact" class="pillar-link">Get in Touch &rarr;</a>
+                    <div class="game-card-content">
+                        <div class="badge-row">
+                            <span class="badge">Action RPG / Metroidvania</span>
+                            <span class="badge">Dec 2026</span>
+                        </div>
+                        <h3 class="game-title">Life of a Regressor</h3>
+                        <p class="game-description">Embark on a dark fantasy adventure in this side-scrolling action RPG with Metroidvania elements. Battle through procedurally generated dungeons and grow stronger with each cycle.</p>
+                        <div class="game-actions">
+                            <span class="coming-soon-badge">Coming December 2026</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- gamedo.live Showcase -->
-        <section class="showcase-section">
-            <div class="showcase-grid">
-                <div class="showcase-info reveal-element">
-                    <h2>gamedo.live</h2>
-                    <p>Our flagship indie game news and review platform. Delivering bilingual coverage with a focus on authenticity and community.</p>
-                    <div class="showcase-stats">
-                        <div class="showcase-stat">
-                            <div class="stat-value">300+</div>
-                            <div class="stat-label">Pages</div>
-                        </div>
-                        <div class="showcase-stat">
-                            <div class="stat-value">70+</div>
-                            <div class="stat-label">Articles</div>
-                        </div>
-                        <div class="showcase-stat">
-                            <div class="stat-value">EN/FR</div>
-                            <div class="stat-label">Languages</div>
-                        </div>
-                    </div>
-                    <a href="https://gamedo.live" class="btn btn-primary" target="_blank" rel="noopener">Explore gamedo.live</a>
-                </div>
-                <div class="showcase-image-frame reveal-element">
-                    <img src="assets/images/gamedo-live.png" alt="gamedo.live — Indie game news and reviews platform">
-                </div>
-            </div>
-        </section>
-
-        <!-- Founder Card -->
-        <section class="founder-section">
+        <!-- CTA Card -->
+        <section class="cta-section">
             <div class="section-container">
-                <a href="https://florianhuet.github.io" class="founder-card reveal-element" target="_blank" rel="noopener">
-                    <div class="founder-photo">
-                        <img src="assets/images/flo.png" alt="Florian Huet">
-                    </div>
-                    <div class="founder-info">
-                        <h3 class="member-name">Florian Huet</h3>
-                        <p class="member-role">Founder & Lead Developer</p>
-                        <p class="member-bio">Game developer passionate about creating unique interactive experiences. Unity3D certified programmer with expertise in mobile and indie game development.</p>
-                        <span class="btn btn-outline">View Portfolio</span>
-                    </div>
-                </a>
+                <div class="cta-card reveal-element">
+                    <h3>Have a project idea?</h3>
+                    <p>We're always exploring new opportunities and collaborations in the indie game space.</p>
+                    <a href="/contact" class="btn btn-primary">Get in Touch</a>
+                </div>
             </div>
         </section>
     </main>
@@ -184,18 +199,5 @@
     </footer>
 
     <script src="animations.js" defer></script>
-    <script>
-    // Legacy anchor redirects
-    var hashRedirects = {
-        '#games': '/projects',
-        '#team': '/about',
-        '#about': '/about',
-        '#contact': '/contact',
-        '#projects': '/projects'
-    };
-    if (hashRedirects[window.location.hash]) {
-        window.location.replace(hashRedirects[window.location.hash]);
-    }
-    </script>
 </body>
 </html>
