@@ -289,7 +289,7 @@ img {
 .nav-logo-icon {
     width: 40px;
     height: 40px;
-    background: var(--color-red);
+    background: transparent;
     border-radius: var(--rounded-sm);
     display: flex;
     align-items: center;
@@ -298,8 +298,8 @@ img {
 }
 
 .nav-logo-icon img {
-    width: 28px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
@@ -467,6 +467,12 @@ img {
     text-align: center;
     z-index: 1;
     padding: 40px;
+}
+
+.hero-logo {
+    max-width: 160px;
+    margin: 0 auto var(--space-8);
+    display: block;
 }
 
 .home-hero-content h1 {
