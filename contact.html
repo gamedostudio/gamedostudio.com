@@ -16,6 +16,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/images/gamedo-logo-transparent.png">
     <script>document.documentElement.classList.add('js');</script>
+    <script>
+      (function() {
+        var theme = null;
+        try { theme = localStorage.getItem('theme'); } catch(e) {}
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -25,7 +36,8 @@
         <div class="nav-container">
             <a href="/" class="nav-logo">
                 <div class="nav-logo-icon">
-                    <img src="assets/images/gamedo-logo-transparent.png" alt="GameDō">
+                    <img src="assets/images/gamedo-logo-transparent.png" alt="GameDō" class="logo-light">
+                    <img src="assets/images/GameDoStudio-logo-transparent-dark.png" alt="GameDō" class="logo-dark">
                 </div>
                 <span class="nav-logo-text">GameDo Studio</span>
             </a>
@@ -35,6 +47,10 @@
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" aria-label="Switch to dark mode">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
             <button class="nav-hamburger" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -103,7 +119,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <div class="nav-logo-icon"><img src="assets/images/gamedo-logo-transparent.png" alt="GameDō"></div>
+                    <div class="nav-logo-icon"><img src="assets/images/gamedo-logo-transparent.png" alt="GameDō" class="logo-light"><img src="assets/images/GameDoStudio-logo-transparent-dark.png" alt="GameDō" class="logo-dark"></div>
                     <span>Gamedō Studio</span>
                 </div>
                 <p class="footer-tagline">Indie games. Honest coverage.</p>

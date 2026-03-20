@@ -57,6 +57,48 @@
     }, delays[index] || 0);
   });
 
+  // ===== Theme Toggle =====
+  var themeToggle = document.querySelector('.theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+
+      // Add smooth transition (skip if user prefers reduced motion)
+      if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.body.classList.add('theme-transitioning');
+        setTimeout(function() { document.body.classList.remove('theme-transitioning'); }, 400);
+      }
+
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch(e) {}
+      themeToggle.setAttribute('aria-label',
+        next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+      );
+    });
+
+    // Set initial aria-label
+    var initialTheme = document.documentElement.getAttribute('data-theme');
+    themeToggle.setAttribute('aria-label',
+      initialTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+    );
+
+    // Listen for OS theme changes (only if no manual override)
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        var stored = null;
+        try { stored = localStorage.getItem('theme'); } catch(err) {}
+        if (!stored) {
+          var newTheme = e.matches ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', newTheme);
+          themeToggle.setAttribute('aria-label',
+            newTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+          );
+        }
+      });
+    }
+  }
+
   // ===== Scroll-Triggered Reveals =====
   var revealElements = document.querySelectorAll('.reveal-element');
 
