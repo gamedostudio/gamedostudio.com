@@ -1580,8 +1580,22 @@ a.founder-card:hover {
         margin-bottom: -60px;
     }
 
+    .page-hero {
+        padding: 100px 0 60px;
+        overflow: visible;
+    }
+
+    .page-hero .kanji {
+        font-size: 3rem;
+    }
+
     .page-hero h1 {
         font-size: 2.5rem;
+    }
+
+    .page-hero .hero-subtitle {
+        font-size: 1.1rem;
+        padding: 0 20px;
     }
 
     .home-hero-content h1 {
@@ -1662,8 +1676,20 @@ a.founder-card:hover {
         font-size: 2rem;
     }
 
+    .page-hero {
+        padding: 80px 0 40px;
+    }
+
+    .page-hero .kanji {
+        font-size: 2.5rem;
+    }
+
     .page-hero h1 {
         font-size: 2rem;
+    }
+
+    .page-hero .hero-subtitle {
+        font-size: 1rem;
     }
 
     .featured-project-card {
