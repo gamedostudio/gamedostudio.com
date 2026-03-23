@@ -1571,6 +1571,15 @@ a.founder-card:hover {
         display: flex;
     }
 
+    .home-hero {
+        overflow: visible;
+    }
+
+    .hero-logo {
+        max-width: 400px;
+        margin-bottom: -60px;
+    }
+
     .page-hero h1 {
         font-size: 2.5rem;
     }
@@ -1642,6 +1651,11 @@ a.founder-card:hover {
 @media (max-width: 480px) {
     .home-hero-content {
         padding: 20px;
+    }
+
+    .hero-logo {
+        max-width: 280px;
+        margin-bottom: -40px;
     }
 
     .home-hero-content h1 {
