@@ -1202,6 +1202,17 @@ a.founder-card:hover {
     color: var(--gs-purple);
 }
 
+.game-card.gravityshot .internal-testing-badge {
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card.gravityshot .internal-testing-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+}
+
 .game-card.helping-hand .coming-soon-badge {
     background: linear-gradient(90deg, var(--hh-blue), var(--hh-blue-light));
     color: #1a2a4a;
