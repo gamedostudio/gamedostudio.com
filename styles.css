@@ -1561,8 +1561,8 @@ a.founder-card:hover {
         background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        padding: var(--space-6);
-        gap: 0;
+        padding: var(--space-4) var(--space-6);
+        gap: 4px;
         border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -1575,7 +1575,10 @@ a.founder-card:hover {
     }
 
     .nav-links a {
-        padding: var(--space-3) var(--space-4);
+        padding: var(--space-4) var(--space-4);
+        min-height: 48px;
+        display: flex;
+        align-items: center;
     }
 
     .nav-hamburger {
