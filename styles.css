@@ -1138,6 +1138,15 @@ a.founder-card:hover {
     border-radius: var(--rounded-md);
 }
 
+.game-card.swarm .game-card-visual {
+    background: linear-gradient(135deg, #1a0830 0%, #2a0a4a 50%, #0a1a3a 100%);
+}
+
+.game-card.swarm .game-card-visual img {
+    filter: drop-shadow(0 10px 20px rgba(255, 64, 160, 0.4));
+    border-radius: var(--rounded-md);
+}
+
 .game-card-content {
     padding: var(--space-6);
 }
