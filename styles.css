@@ -1227,6 +1227,47 @@ a.founder-card:hover {
     box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
 }
 
+.google-play-badge-link {
+    display: inline-block;
+    line-height: 0;
+    transition: transform 0.2s ease;
+}
+
+.google-play-badge-link:hover {
+    transform: translateY(-2px);
+}
+
+.google-play-badge {
+    height: 56px;
+    width: auto;
+    display: block;
+}
+
+.game-card.swarm .coming-soon-badge.internal-testing-badge {
+    position: relative;
+    padding: 12px 28px;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(90deg, #ff3399, #30d5c8);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+        0 8px 24px rgba(255, 51, 153, 0.35),
+        0 4px 16px rgba(48, 213, 200, 0.3);
+    transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.game-card.swarm .coming-soon-badge.internal-testing-badge:hover {
+    background-position: 100% 50%;
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.25) inset,
+        0 12px 32px rgba(255, 51, 153, 0.5),
+        0 6px 20px rgba(48, 213, 200, 0.45);
+}
+
 .game-card.helping-hand .coming-soon-badge {
     background: linear-gradient(90deg, var(--hh-blue), var(--hh-blue-light));
     color: #1a2a4a;

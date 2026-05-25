@@ -43,8 +43,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
+                <li><a href="/games">Games</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/projects">Projects</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
             <button class="theme-toggle" aria-label="Switch to dark mode">
@@ -102,7 +102,7 @@
                     </div>
                     <h3>Games</h3>
                     <p>Crafting unique indie experiences. Explore our upcoming game projects.</p>
-                    <a href="/projects" class="pillar-link">View Projects &rarr;</a>
+                    <a href="/games" class="pillar-link">View Games &rarr;</a>
                 </div>
                 <div class="pillar-card reveal-element">
                     <div class="icon-box">
@@ -205,11 +205,11 @@
     <script>
     // Legacy anchor redirects
     var hashRedirects = {
-        '#games': '/projects',
+        '#games': '/games',
         '#team': '/about',
         '#about': '/about',
         '#contact': '/contact',
-        '#projects': '/projects'
+        '#projects': '/games'
     };
     if (hashRedirects[window.location.hash]) {
         window.location.replace(hashRedirects[window.location.hash]);
