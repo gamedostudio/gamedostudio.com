@@ -885,6 +885,12 @@ a.founder-card:hover {
     flex-wrap: wrap;
 }
 
+/* Spacing when more than one founder card/profile is stacked */
+.founder-section .founder-card + .founder-card,
+.founder-profile-section .founder-profile + .founder-profile {
+    margin-top: var(--space-6);
+}
+
 /* ===== Values Section ===== */
 .values-section {
     padding: var(--section-padding);
