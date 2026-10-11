@@ -99,6 +99,52 @@
     }
   }
 
+  // ===== Home games carousel: arrows, dots, swipe (scroll-snap), autoplay that pauses on hover/focus =====
+  var gamesCarousel = document.querySelector('[data-games-carousel]');
+  if (gamesCarousel) {
+    var gTrack = gamesCarousel.querySelector('.games-track');
+    var gSlides = gTrack.querySelectorAll('.games-slide');
+    var gDotsBox = gamesCarousel.querySelector('.games-dots');
+    var gDots = [];
+    var gReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var gTimer = null;
+
+    var gCurrent = function () { return Math.round(gTrack.scrollLeft / gTrack.clientWidth); };
+    var gGoTo = function (i) {
+      var n = (i + gSlides.length) % gSlides.length;
+      gTrack.scrollTo({ left: n * gTrack.clientWidth, behavior: gReduce ? 'auto' : 'smooth' });
+    };
+
+    gSlides.forEach(function (_, i) {
+      var d = document.createElement('button');
+      d.setAttribute('aria-label', 'Show game ' + (i + 1));
+      d.addEventListener('click', function () { gGoTo(i); });
+      gDotsBox.appendChild(d);
+      gDots.push(d);
+    });
+
+    var gSync = function () {
+      var c = gCurrent();
+      gDots.forEach(function (d, i) { d.classList.toggle('active', i === c); });
+    };
+
+    var gStop = function () { if (gTimer) { clearInterval(gTimer); gTimer = null; } };
+    var gStart = function () {
+      if (gReduce || gTimer) return;
+      gTimer = setInterval(function () { gGoTo(gCurrent() + 1); }, 7000);
+    };
+
+    gTrack.addEventListener('scroll', function () { window.requestAnimationFrame(gSync); }, { passive: true });
+    gamesCarousel.querySelector('.games-arrow.prev').addEventListener('click', function () { gGoTo(gCurrent() - 1); });
+    gamesCarousel.querySelector('.games-arrow.next').addEventListener('click', function () { gGoTo(gCurrent() + 1); });
+    gamesCarousel.addEventListener('mouseenter', gStop);
+    gamesCarousel.addEventListener('mouseleave', gStart);
+    gamesCarousel.addEventListener('focusin', gStop);
+    gamesCarousel.addEventListener('touchstart', gStop, { passive: true });
+    gSync();
+    gStart();
+  }
+
   // ===== Scroll-Triggered Reveals =====
   var revealElements = document.querySelectorAll('.reveal-element');
 

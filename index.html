@@ -10,6 +10,8 @@
     <meta property="og:description" content="GameDō Studio is a small indie game studio that also writes about indie games. Explore our projects and visit gamedo.live for indie game news and reviews.">
     <meta property="og:url" content="https://gamedostudio.com/">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gamedostudio.com/assets/images/brand/og-studio.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +48,7 @@
                 <li><a href="/games">Games</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
+                <li><a href="https://gamedo.live" class="nav-external" target="_blank" rel="noopener">gamedo.live &#8599;</a></li>
             </ul>
             <button class="theme-toggle" aria-label="Switch to dark mode">
                 <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -71,74 +74,93 @@
                 <img src="assets/images/gamedo-logo-transparent.png" alt="GameDō Studio" class="hero-logo hero-hidden logo-light">
                 <img src="assets/images/GameDoStudio-title-dark-tranparent.png" alt="GameDō Studio" class="hero-logo hero-hidden logo-dark">
                 <h1 class="hero-hidden">Indie games.<br><span class="accent">Indie news.</span></h1>
-                <p class="hero-subtitle hero-hidden">A small indie game studio that also writes about the indie games we love.</p>
+                <p class="hero-subtitle hero-hidden">A small indie studio from Cebu, making arcade and puzzle games for your phone.</p>
                 <div class="hero-actions hero-hidden">
-                    <a href="https://gamedo.live" class="btn btn-primary" target="_blank" rel="noopener">Visit gamedo.live</a>
-                    <a href="/about" class="btn btn-outline">Learn More</a>
+                    <a href="/games" class="btn btn-primary">Our games</a>
+                    <a href="/about" class="btn btn-outline">Meet the studio</a>
                 </div>
             </div>
         </section>
 
-        <!-- Three Pillars -->
-        <section class="pillars-section">
+        <!-- Our games: carousel -->
+        <section class="games-carousel" aria-roledescription="carousel" aria-label="Our games" data-games-carousel>
+            <div class="games-track">
+        <!-- Featured game: Swarm from Hypervoid 88 -->
+        <div class="games-slide home-swarm" role="group" aria-roledescription="slide" aria-label="1 of 2">
             <div class="section-container">
-                <div class="section-header reveal-element">
-                    <span class="section-badge">What We Do</span>
-                    <h2>Three Pillars</h2>
+                <div class="home-swarm-inner reveal-element">
+                    <span class="section-badge">Our next game</span>
+                    <img src="assets/images/games/swarm/logo.webp" alt="Swarm from Hypervoid 88" class="home-swarm-logo">
+                    <p>A neon arcade shoot-'em-up where enemy swarms move like living things and every run is built from 40 powers. Coming to iOS and Android in late 2026.</p>
+                    <div class="hero-actions">
+                        <a href="/swarm-from-hypervoid-88" class="btn btn-primary">Discover the game</a>
+                        <a href="/games" class="btn btn-outline gp-btn-light">All our games</a>
+                    </div>
                 </div>
             </div>
-            <div class="pillars-grid">
-                <div class="pillar-card reveal-element">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+
+        <!-- Featured game: GravityShot -->
+        <div class="games-slide home-gravity" role="group" aria-roledescription="slide" aria-label="2 of 2">
+            <div class="section-container">
+                <div class="home-gravity-inner reveal-element">
+                    <span class="section-badge">Out now</span>
+                    <img src="assets/images/games/gravityshot/title.webp" alt="GravityShot" class="home-gravity-logo">
+                    <p>Aim. Shoot. Defy gravity. Bend your orb's path around black holes, wormholes and pulsars across 60 handcrafted levels. Free on Google Play.</p>
+                    <div class="hero-actions">
+                        <a href="/gravityshot" class="btn btn-primary">Discover the game</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.gamedostudio.gravityshot" target="_blank" rel="noopener noreferrer"><img src="assets/images/google-play-badge.png" alt="Get it on Google Play" class="home-gravity-badge"></a>
                     </div>
-                    <h3>Media</h3>
-                    <p>gamedo.live shares indie game news, reviews, and thoughts from fans of the scene.</p>
-                    <a href="https://gamedo.live" class="pillar-link" target="_blank" rel="noopener">Visit gamedo.live &rarr;</a>
                 </div>
-                <div class="pillar-card reveal-element">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M14 12h4M12 6v12"/></svg>
+            </div>
+        </div>
+            </div>
+            <button class="games-arrow prev" aria-label="Previous game"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button class="games-arrow next" aria-label="Next game"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+            <div class="games-dots"></div>
+        </section>
+
+        <!-- gamedo.live: our indie games media -->
+        <section class="home-live">
+            <div class="section-container home-live-grid">
+                <div class="home-live-copy reveal-element">
+                    <span class="section-badge">Our indie games media</span>
+                    <h2>gamedo<span class="accent">.live</span></h2>
+                    <p>Besides making games, we write about the ones we love. News, reviews and hidden gems from the indie scene, in English and French.</p>
+                    <ul class="home-live-sections">
+                        <li><a href="https://gamedo.live/news" target="_blank" rel="noopener">News</a></li>
+                        <li><a href="https://gamedo.live/discovery" target="_blank" rel="noopener">Discovery</a></li>
+                        <li><a href="https://gamedo.live/under-the-radar" target="_blank" rel="noopener">Under the Radar</a></li>
+                        <li><a href="https://gamedo.live/reviews" target="_blank" rel="noopener">Reviews</a></li>
+                        <li><a href="https://gamedo.live/should-i-play" target="_blank" rel="noopener">Should I Play It?</a></li>
+                    </ul>
+                    <div class="home-live-stats">
+                        <div><strong>240+</strong><span>games covered</span></div>
+                        <div><strong>20+</strong><span>reviews</span></div>
+                        <div><strong>EN / FR</strong><span>every article</span></div>
                     </div>
-                    <h3>Games</h3>
-                    <p>Crafting unique indie experiences. Explore our upcoming game projects.</p>
-                    <a href="/games" class="pillar-link">View Games &rarr;</a>
+                    <a href="https://gamedo.live" class="btn btn-primary" target="_blank" rel="noopener">Read gamedo.live &#8599;</a>
                 </div>
-                <div class="pillar-card reveal-element">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <a href="https://gamedo.live" class="home-live-browser reveal-element" target="_blank" rel="noopener" aria-label="Open gamedo.live">
+                    <div class="browser-bar">
+                        <span class="browser-dots"><i></i><i></i><i></i></span>
+                        <span class="browser-url">gamedo.live</span>
                     </div>
-                    <h3>Community</h3>
-                    <p>Building connections through social media, Discord, and direct engagement.</p>
-                    <a href="/contact" class="pillar-link">Get in Touch &rarr;</a>
-                </div>
+                    <div class="browser-screen">
+                        <img src="assets/images/gamedo-live-home.webp" alt="The gamedo.live homepage: latest indie game stories, trailers and new releases" loading="lazy">
+                    </div>
+                </a>
             </div>
         </section>
 
-        <!-- gamedo.live Showcase -->
-        <section class="showcase-section">
-            <div class="showcase-grid">
-                <div class="showcase-info reveal-element">
-                    <h2>gamedo.live</h2>
-                    <p>Our little indie game news and review site, written in English and French by people who love the scene.</p>
-                    <div class="showcase-stats">
-                        <div class="showcase-stat">
-                            <div class="stat-value">300+</div>
-                            <div class="stat-label">Pages</div>
-                        </div>
-                        <div class="showcase-stat">
-                            <div class="stat-value">70+</div>
-                            <div class="stat-label">Articles</div>
-                        </div>
-                        <div class="showcase-stat">
-                            <div class="stat-value">EN/FR</div>
-                            <div class="stat-label">Languages</div>
-                        </div>
-                    </div>
-                    <a href="https://gamedo.live" class="btn btn-primary" target="_blank" rel="noopener">Explore gamedo.live</a>
-                </div>
-                <div class="showcase-image-frame reveal-element">
-                    <img src="assets/images/gamedo-live.png" alt="gamedo.live — Indie game news and reviews platform">
+        <!-- Follow the development -->
+        <section class="home-follow">
+            <div class="section-container reveal-element">
+                <h2>Follow the development</h2>
+                <p>Gameplay clips, behind-the-scenes and release news, as they happen.</p>
+                <div class="home-follow-links">
+                    <a href="https://x.com/GameDoStudio" target="_blank" rel="noopener" class="btn btn-primary">Follow us on X</a>
+                    <a href="/contact" class="btn btn-outline">Contact us</a>
                 </div>
             </div>
         </section>

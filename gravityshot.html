@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GravityShot — GameDō Studio</title>
+    <meta name="description" content="GravityShot is GameDō Studio's physics puzzle game for Android: bend your orb's path around black holes, wormholes and pulsars across 60 handcrafted levels. Free on Google Play.">
+    <link rel="canonical" href="https://gamedostudio.com/gravityshot">
+    <meta property="og:title" content="GravityShot — GameDō Studio">
+    <meta property="og:description" content="GravityShot is GameDō Studio's physics puzzle game for Android: bend your orb's path around black holes, wormholes and pulsars across 60 handcrafted levels. Free on Google Play.">
+    <meta property="og:url" content="https://gamedostudio.com/gravityshot">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gamedostudio.com/assets/images/games/gravityshot/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/favicon-circle.png">
+    <script>document.documentElement.classList.add('js');</script>
+    <script>
+      (function() {
+        var theme = null;
+        try { theme = localStorage.getItem('theme'); } catch(e) {}
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <img src="assets/images/gamedo-logo-transparent.png" alt="GameDō" class="logo-light">
+                    <img src="assets/images/GameDoStudio-logo-transparent-dark.png" alt="GameDō" class="logo-dark">
+                </div>
+                <span class="nav-logo-text">GameDo Studio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/games">Games</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="https://gamedo.live" class="nav-external" target="_blank" rel="noopener">gamedo.live &#8599;</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Switch to dark mode">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <button class="nav-hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Hero: text + phones -->
+        <section class="gp-hero gp-hero-space gp-hero-split">
+            <div class="stars-bg"></div>
+            <div class="gp-hero-grid">
+                <div class="gp-hero-copy">
+                    <img src="assets/images/games/gravityshot/title.webp" alt="GravityShot" class="gp-hero-logo gp-hero-logo-square hero-hidden">
+                    <p class="gp-hero-pitch hero-hidden">Aim. Shoot. Defy gravity. A physics puzzle game where you bend your orb's path around black holes, wormholes and pulsars to reach the goal.</p>
+                    <div class="gp-tags hero-hidden">
+                        <span>Out now</span><span>Android</span><span>Free to play</span>
+                    </div>
+                    <div class="hero-actions hero-hidden">
+                        <a href="https://play.google.com/store/apps/details?id=com.gamedostudio.gravityshot" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/images/google-play-badge.png" alt="Get it on Google Play" class="gp-play-badge">
+                        </a>
+                    </div>
+                </div>
+                <div class="gp-hero-phones hero-hidden" aria-hidden="true">
+                    <img src="assets/images/games/gravityshot/screen-menu.webp" alt="" class="gp-phone-img back">
+                    <img src="assets/images/games/gravityshot/screen-play-1.webp" alt="" class="gp-phone-img front">
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="gp-section">
+            <div class="section-container gp-split">
+                <div class="reveal-element">
+                    <span class="section-badge">The game</span>
+                    <h2>Plan the perfect shot</h2>
+                    <p>GravityShot is a physics-based puzzle game where you launch an orb through increasingly tricky levels by mastering gravitational forces.</p>
+                    <p>Plan your trajectory, account for every gravity field, and find the angle that curves your shot all the way to the goal. Your last attempt stays on screen as a ghost line, so every retry gets you a little closer.</p>
+                </div>
+                <div class="gp-split-media reveal-element">
+                    <img src="assets/images/games/gravityshot/feature-orb.webp" alt="GravityShot: slingshot through gravity" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="gp-section gp-dark">
+            <div class="section-container">
+                <div class="section-header reveal-element">
+                    <span class="section-badge">Screenshots</span>
+                    <h2>One finger, a lot of physics</h2>
+                </div>
+                <div class="gp-phones">
+                    <figure class="gp-phone reveal-element"><img src="assets/images/games/gravityshot/screen-play-1.webp" alt="GravityShot screenshot: gameplay" loading="lazy"></figure>
+                    <figure class="gp-phone reveal-element"><img src="assets/images/games/gravityshot/screen-play-2.webp" alt="GravityShot screenshot: gameplay" loading="lazy"></figure>
+                    <figure class="gp-phone reveal-element"><img src="assets/images/games/gravityshot/screen-play-3.webp" alt="GravityShot screenshot: gameplay" loading="lazy"></figure>
+                    <figure class="gp-phone reveal-element"><img src="assets/images/games/gravityshot/screen-sector-pulsars.webp" alt="GravityShot screenshot: Sector 3, Pulsars" loading="lazy"></figure>
+                    <figure class="gp-phone reveal-element"><img src="assets/images/games/gravityshot/screen-orbs.webp" alt="GravityShot screenshot: choosing an orb (Solar)" loading="lazy"></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="gp-section">
+            <div class="section-container">
+                <div class="section-header reveal-element">
+                    <span class="section-badge">Features</span>
+                    <h2>Small game, lots of space</h2>
+                </div>
+                <div class="gp-features">
+                    <div class="gp-feature reveal-element">
+                        <h3>60 handcrafted levels</h3>
+                        <p>Six sectors of levels, from gentle tutorials to brain-twisting challenges.</p>
+                    </div>
+                    <div class="gp-feature reveal-element">
+                        <h3>9 orbs to unlock</h3>
+                        <p>Each orb has its own ability: a smaller hitbox, heavier gravity, a speed boost on wall bounces, a second shot.</p>
+                    </div>
+                    <div class="gp-feature reveal-element">
+                        <h3>One-touch controls</h3>
+                        <p>Drag, aim, release. Easy to pick up, hard to put down.</p>
+                    </div>
+                    <div class="gp-feature reveal-element">
+                        <h3>Gravity cores</h3>
+                        <p>Collect them along the way and spend them on new orbs.</p>
+                    </div>
+                    <div class="gp-feature reveal-element">
+                        <h3>Original soundtrack</h3>
+                        <p>Seven tracks made to keep you in the zone.</p>
+                    </div>
+                    <div class="gp-feature reveal-element">
+                        <h3>Plays offline</h3>
+                        <p>No account needed. Your progress stays on your device.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sectors -->
+        <section class="gp-section gp-dark">
+            <div class="section-container">
+                <div class="section-header reveal-element">
+                    <span class="section-badge">The sectors</span>
+                    <h2>Six sectors, each with its own force</h2>
+                </div>
+                <div class="gp-cosmos-grid">
+                    <figure class="gp-cosmos reveal-element"><img src="assets/images/games/gravityshot/gravitars.webp" alt="Gravitars" loading="lazy"><figcaption><strong>Sector 1</strong><span>Gravitars</span></figcaption></figure>
+                    <figure class="gp-cosmos reveal-element"><img src="assets/images/games/gravityshot/repulsars.webp" alt="Repulsars" loading="lazy"><figcaption><strong>Sector 2</strong><span>Repulsars</span></figcaption></figure>
+                    <figure class="gp-cosmos reveal-element"><img src="assets/images/games/gravityshot/pulsars.webp" alt="Pulsars" loading="lazy"><figcaption><strong>Sector 3</strong><span>Pulsars</span></figcaption></figure>
+                    <figure class="gp-cosmos reveal-element"><img src="assets/images/games/gravityshot/velocitars.webp" alt="Velocitars" loading="lazy"><figcaption><strong>Sector 4</strong><span>Velocitars</span></figcaption></figure>
+                    <figure class="gp-cosmos reveal-element"><img src="assets/images/games/gravityshot/black-holes.webp" alt="Black holes" loading="lazy"><figcaption><strong>Sector 5</strong><span>Black holes</span></figcaption></figure>
+                    <figure class="gp-cosmos reveal-element"><img src="assets/images/games/gravityshot/worm-holes.webp" alt="Wormholes" loading="lazy"><figcaption><strong>Sector 6</strong><span>Wormholes</span></figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner -->
+        <section class="gp-banner reveal-element">
+            <img src="assets/images/games/gravityshot/feature-phones.webp" alt="GravityShot menus and levels on three phones" loading="lazy">
+        </section>
+
+        <!-- Facts -->
+        <section class="gp-section">
+            <div class="section-container gp-split">
+                <div class="reveal-element">
+                    <span class="section-badge">Fact sheet</span>
+                    <h2>At a glance</h2>
+                    <dl class="gp-facts">
+                        <dt>Developer</dt><dd>GameDō Studio, Cebu, Philippines</dd>
+                        <dt>Release</dt><dd>Out now</dd>
+                        <dt>Platform</dt><dd>Android (Google Play)</dd>
+                        <dt>Price</dt><dd>Free to play</dd>
+                        <dt>Genre</dt><dd>Physics puzzle</dd>
+                        <dt>Levels</dt><dd>60 across 6 sectors, plus 10 tutorial levels</dd>
+                        <dt>Languages</dt><dd>English, French</dd>
+                        <dt>Engine</dt><dd>Godot 4</dd>
+                    </dl>
+                </div>
+                <div class="gp-press reveal-element">
+                    <img src="assets/images/games/gravityshot/icon.webp" alt="GravityShot app icon" class="gp-press-icon" loading="lazy">
+                    <h3>Play it now</h3>
+                    <p>GravityShot is free on Google Play. Questions, feedback or a level you can't beat? Write to us.</p>
+                    <div class="gp-press-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.gamedostudio.gravityshot" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+                        <a href="mailto:contact@gamedostudio.com" class="btn btn-outline">contact@gamedostudio.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="nav-logo-icon"><img src="assets/images/gamedo-logo-transparent.png" alt="GameDō" class="logo-light"><img src="assets/images/GameDoStudio-logo-transparent-dark.png" alt="GameDō" class="logo-dark"></div>
+                    <span>Gamedō Studio</span>
+                </div>
+                <p class="footer-tagline">Indie games. Indie news.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <a href="mailto:contact@gamedostudio.com">contact@gamedostudio.com</a>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://x.com/GameDoStudio" class="social-link" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://github.com/GameDoStudio" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                    <a href="https://gamedostudio.itch.io/" class="social-link" target="_blank" rel="noopener" aria-label="itch.io">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.058 2.436-2.336 0 1.278 1.07 2.336 2.4 2.336 1.328 0 2.362-1.058 2.362-2.336 0 1.278 1.105 2.336 2.434 2.336h.478c1.33 0 2.434-1.058 2.434-2.336 0 1.278 1.034 2.336 2.362 2.336 1.33 0 2.4-1.058 2.4-2.336 0 1.278 1.106 2.336 2.435 2.336C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.622-2.08-2.99-3.13-3.612a55.03 55.03 0 0 0-8.87-.338c-2.88 0-7.222.146-8.87.338z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCxA5IRppJs3cn4VRS00mbNg" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@gamedostudio" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year"></span> Gamedō Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js" defer></script>
+</body>
+</html>
