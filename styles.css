@@ -1158,6 +1158,29 @@ a.founder-card:hover {
     border-radius: 0;
 }
 
+.game-card.dipdee .game-card-visual {
+    background: linear-gradient(180deg, rgba(8, 4, 24, 0.15), rgba(8, 4, 24, 0.55)), url('assets/images/games/dipdee/key-art.webp') center / cover no-repeat;
+}
+
+.game-card.dipdee .game-card-visual img {
+    max-width: 62%;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6));
+}
+
+.game-card.dipdee .game-title {
+    font-family: var(--font-game);
+    background: linear-gradient(90deg, #ffb21e, #2fd86b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.game-card.dipdee .coming-soon-badge {
+    background: linear-gradient(90deg, #ffb21e, #2fd86b);
+    color: #120a24;
+}
+
 .game-card-content {
     padding: var(--space-6);
 }
