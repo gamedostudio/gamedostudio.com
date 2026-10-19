@@ -2553,6 +2553,47 @@ a.founder-card:hover {
     }
 }
 
+/* ===== Home: Dip'Dee Survival band (text on the left, the wreck on the right of the key art) ===== */
+.home-dipdee {
+    position: relative;
+    padding: 120px 0;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(8, 4, 24, 0.92) 0%, rgba(8, 4, 24, 0.65) 45%, rgba(8, 4, 24, 0.05) 100%), url('assets/images/games/dipdee/key-art.webp') center / cover no-repeat;
+}
+
+.home-dipdee-inner {
+    max-width: 500px;
+}
+
+.home-dipdee .section-badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.home-dipdee-logo {
+    width: min(360px, 76vw);
+    margin: 18px 0 16px;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+}
+
+.home-dipdee p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 28px;
+    line-height: 1.8;
+}
+
+.home-dipdee .hero-actions {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .home-dipdee {
+        padding: 90px 0;
+        background: linear-gradient(rgba(8, 4, 24, 0.8), rgba(8, 4, 24, 0.8)), url('assets/images/games/dipdee/key-art.webp') center / cover no-repeat;
+    }
+}
+
 /* ===== Home: gamedo.live section (copy + browser window with an auto-scrolling capture) ===== */
 .home-live {
     padding: 110px 0;
@@ -2730,5 +2771,32 @@ a.founder-card:hover {
 @media (prefers-reduced-motion: reduce) {
     .browser-screen img {
         animation: none;
+    }
+}
+
+/* Dip'Dee Survival: six pixel-art bosses, scaled without smoothing */
+.gp-bosses-pixel {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.gp-bosses-pixel .gp-boss img {
+    max-height: 200px;
+    image-rendering: pixelated;
+}
+
+.gp-boss span {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+    .gp-bosses-pixel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gp-bosses-pixel {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
