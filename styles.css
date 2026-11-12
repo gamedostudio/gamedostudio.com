@@ -2823,3 +2823,165 @@ a.founder-card:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* ===== Quadrille (/quadrille): a light, garden-coloured page; phone screenshots are portrait ===== */
+.q-hero {
+    min-height: auto;
+    padding: 130px 24px 80px;
+    color: #3a3328;
+    background: linear-gradient(180deg, #e6f3c9 0%, #cfe7a6 60%, #b5d98a 100%);
+}
+
+.q-hero .gp-hero-inner {
+    max-width: 980px;
+}
+
+.q-hero-art {
+    width: 100%;
+    margin: 0 auto 28px;
+    border-radius: var(--rounded-xl);
+    box-shadow: 0 18px 40px rgba(60, 80, 30, 0.25);
+}
+
+.q-hero .gp-hero-pitch {
+    color: #4a4235;
+}
+
+.q-hero .gp-tags span {
+    color: #3a3328;
+    border-color: rgba(58, 51, 40, 0.25);
+    background: rgba(255, 253, 244, 0.7);
+}
+
+.q-page .gp-feature {
+    border-top-color: #7cb84f;
+}
+
+.q-gallery {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.q-gallery .gp-art,
+.q-season img {
+    aspect-ratio: 9 / 16;
+}
+
+.q-seasons-band {
+    background: linear-gradient(90deg, #dcefc0 0%, #eef2c4 33%, #f1dfb8 66%, #e3ecf4 100%);
+    color: #3a3328;
+}
+
+.q-seasons-band .section-header h2 {
+    color: #3a3328;
+}
+
+.q-seasons-band .section-badge {
+    background: rgba(255, 253, 244, 0.7);
+    color: #3a3328;
+}
+
+.q-seasons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.q-season img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--rounded-lg);
+    box-shadow: 0 12px 28px rgba(60, 50, 30, 0.2);
+    transition: transform 0.4s ease;
+}
+
+.q-season:hover img {
+    transform: translateY(-6px);
+}
+
+.q-season figcaption {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.q-season strong {
+    display: block;
+    font-family: var(--font-game);
+    font-size: 16px;
+}
+
+.q-season span {
+    font-size: 14px;
+    color: #6a604f;
+}
+
+@media (max-width: 1024px) {
+    .q-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .q-hero {
+        padding: 110px 16px 60px;
+    }
+
+    .q-gallery,
+    .q-seasons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Home carousel slide and games card */
+.home-quadrille {
+    position: relative;
+    padding: 110px 0;
+    color: #3a3328;
+    background: url('assets/images/games/quadrille/plot.webp') right 8% center / auto 80% no-repeat, linear-gradient(180deg, #e6f3c9 0%, #cfe7a6 60%, #b5d98a 100%);
+}
+
+.home-quadrille-inner {
+    max-width: 500px;
+}
+
+.home-quadrille .section-badge {
+    background: rgba(255, 255, 255, 0.7);
+    color: #3a3328;
+}
+
+.home-quadrille h2 {
+    font-family: var(--font-game);
+    font-size: 44px;
+    margin: 18px 0 14px;
+    color: #3a3328;
+}
+
+.home-quadrille p {
+    color: #4a4235;
+    margin-bottom: 28px;
+    line-height: 1.8;
+}
+
+.home-quadrille .hero-actions {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .home-quadrille {
+        padding: 90px 0;
+        background: linear-gradient(180deg, #e6f3c9 0%, #cfe7a6 60%, #b5d98a 100%);
+    }
+}
+
+.game-card.quadrille .game-card-visual {
+    background: url('assets/images/games/quadrille/key-art.webp') center / cover no-repeat;
+}
+
+.game-card.quadrille .game-title a {
+    color: #5a9a35;
+}
+
+.game-card.quadrille .coming-soon-badge {
+    background: linear-gradient(90deg, #8cc860, #f2b84b);
+    color: #3a3328;
+}
