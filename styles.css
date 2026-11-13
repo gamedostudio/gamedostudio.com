@@ -2651,20 +2651,6 @@ a.founder-card:hover {
     gap: 12px;
 }
 
-.home-way-facts span {
-    border: 1px solid var(--border-subtle);
-    border-radius: 999px;
-    padding: 9px 18px;
-    font-size: 15px;
-    color: var(--text-secondary);
-}
-
-.home-way-facts span b {
-    font-family: var(--font-game);
-    color: var(--color-red);
-    margin-right: 6px;
-}
-
 /* ===== Home: studio log ===== */
 .home-log {
     padding: 90px 0 110px;
