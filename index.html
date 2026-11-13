@@ -63,100 +63,146 @@
     </nav>
 
     <main id="main">
-        <!-- Hero Section -->
-        <section class="home-hero">
-            <div class="hero-mesh">
-                <div class="hero-mesh-circle"></div>
-                <div class="hero-mesh-circle"></div>
-                <div class="hero-mesh-circle"></div>
+        <!-- Showcase: one game full screen, the four games as tabs -->
+        <section class="showcase" aria-roledescription="carousel" aria-label="Our games" data-showcase>
+            <h1 class="sr-only">GameDō Studio, the way of the game</h1>
+            <div class="showcase-stage">
+                <article class="show-slide show-swarm is-active" id="show-swarm" role="tabpanel" aria-labelledby="tab-swarm">
+                    <div class="show-bg"></div>
+                    <div class="section-container">
+                        <div class="show-content">
+                            <span class="section-badge is-next">Our next game</span>
+                            <img src="assets/images/games/swarm/logo.webp" alt="Swarm from Hypervoid 88" class="show-logo">
+                            <p>A neon arcade shoot-'em-up where enemy swarms move like living things and every run is built from 40 powers. Coming to iOS and Android in late 2026.</p>
+                            <div class="hero-actions">
+                                <a href="/swarm-from-hypervoid-88" class="btn btn-primary">Discover the game</a>
+                                <a href="/games" class="btn btn-outline gp-btn-light">All our games</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="show-slide show-gravity" id="show-gravity" role="tabpanel" aria-labelledby="tab-gravity">
+                    <div class="show-bg"></div>
+                    <div class="section-container">
+                        <div class="show-content">
+                            <span class="section-badge is-live">Out now</span>
+                            <img src="assets/images/games/gravityshot/title.webp" alt="GravityShot" class="show-logo">
+                            <p>Aim. Shoot. Defy gravity. Bend your orb's path around black holes, wormholes and pulsars across 60 handcrafted levels. Free on Google Play.</p>
+                            <div class="hero-actions">
+                                <a href="/gravityshot" class="btn btn-primary">Discover the game</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.gamedostudio.gravityshot" target="_blank" rel="noopener noreferrer"><img src="assets/images/google-play-badge.png" alt="Get it on Google Play" class="show-play-badge"></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="show-slide show-dipdee" id="show-dipdee" role="tabpanel" aria-labelledby="tab-dipdee">
+                    <div class="show-bg"></div>
+                    <div class="section-container">
+                        <div class="show-content">
+                            <span class="section-badge">Coming soon</span>
+                            <img src="assets/images/games/dipdee/logo.webp" alt="Dip'Dee Survival" class="show-logo">
+                            <p>Crash-landed on a hostile planet, Dip'Dee has one gun and one goal: survive the night. 30 nights, swarms of monsters and six bosses on the way to rescue. Soon free on Google Play.</p>
+                            <div class="hero-actions">
+                                <a href="/dipdee-survival" class="btn btn-primary">Discover the game</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.gamedostudio.dipdeesurvival" target="_blank" rel="noopener noreferrer"><img src="assets/images/google-play-badge.png" alt="Get it on Google Play" class="show-play-badge"></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="show-slide show-quadrille" id="show-quadrille" role="tabpanel" aria-labelledby="tab-quadrille">
+                    <div class="show-bg"></div>
+                    <div class="section-container">
+                        <div class="show-content">
+                            <span class="section-badge">Coming soon</span>
+                            <h2 class="show-title">Quadrille</h2>
+                            <p>A cozy block puzzle in a garden that changes with the seasons. Fill the lines, let the flowers bloom: 160 levels across 9 gardens, and an endless Classic mode. Soon free on Google Play.</p>
+                            <div class="hero-actions">
+                                <a href="/quadrille" class="btn btn-primary">Discover the game</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.gamedostudio.quadrille" target="_blank" rel="noopener noreferrer"><img src="assets/images/google-play-badge.png" alt="Get it on Google Play" class="show-play-badge"></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="home-hero-content">
-                <img src="assets/images/gamedo-logo-transparent.png" alt="GameDō Studio" class="hero-logo hero-hidden logo-light">
-                <img src="assets/images/GameDoStudio-title-dark-tranparent.png" alt="GameDō Studio" class="hero-logo hero-hidden logo-dark">
-                <h1 class="hero-hidden">The way<br><span class="accent">of the game.</span></h1>
-                <p class="hero-subtitle hero-hidden">We're a small studio from Cebu, walking it one game at a time.</p>
-                <div class="hero-actions hero-hidden">
-                    <a href="/games" class="btn btn-primary">Our games</a>
-                    <a href="/about" class="btn btn-outline">Meet the studio</a>
+
+            <div class="showcase-tabs">
+                <div class="section-container" role="tablist" aria-label="Choose a game">
+                    <button class="show-tab" role="tab" id="tab-swarm" aria-controls="show-swarm" aria-selected="true">
+                        <img src="assets/images/games/swarm/icon.webp" alt="">
+                        <span><strong>Swarm from Hypervoid 88</strong><small>Late 2026</small></span>
+                    </button>
+                    <button class="show-tab" role="tab" id="tab-gravity" aria-controls="show-gravity" aria-selected="false" tabindex="-1">
+                        <img src="assets/images/games/gravityshot/icon.webp" alt="">
+                        <span><strong>GravityShot</strong><small>Out now</small></span>
+                    </button>
+                    <button class="show-tab" role="tab" id="tab-dipdee" aria-controls="show-dipdee" aria-selected="false" tabindex="-1">
+                        <img src="assets/images/games/dipdee/icon.webp" alt="">
+                        <span><strong>Dip'Dee Survival</strong><small>Coming soon</small></span>
+                    </button>
+                    <button class="show-tab" role="tab" id="tab-quadrille" aria-controls="show-quadrille" aria-selected="false" tabindex="-1">
+                        <img src="assets/images/games/quadrille/icon.webp" alt="">
+                        <span><strong>Quadrille</strong><small>Coming soon</small></span>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Our games: carousel -->
-        <section class="games-carousel" aria-roledescription="carousel" aria-label="Our games" data-games-carousel>
-            <div class="games-track">
-        <!-- Featured game: Swarm from Hypervoid 88 -->
-        <div class="games-slide home-swarm" role="group" aria-roledescription="slide" aria-label="1 of 4">
-            <div class="section-container">
-                <div class="home-swarm-inner reveal-element">
-                    <span class="section-badge">Our next game</span>
-                    <img src="assets/images/games/swarm/logo.webp" alt="Swarm from Hypervoid 88" class="home-swarm-logo">
-                    <p>A neon arcade shoot-'em-up where enemy swarms move like living things and every run is built from 40 powers. Coming to iOS and Android in late 2026.</p>
-                    <div class="hero-actions">
-                        <a href="/swarm-from-hypervoid-88" class="btn btn-primary">Discover the game</a>
-                        <a href="/games" class="btn btn-outline gp-btn-light">All our games</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Featured game: GravityShot -->
-        <div class="games-slide home-gravity" role="group" aria-roledescription="slide" aria-label="2 of 4">
-            <div class="section-container">
-                <div class="home-gravity-inner reveal-element">
-                    <span class="section-badge">Out now</span>
-                    <img src="assets/images/games/gravityshot/title.webp" alt="GravityShot" class="home-gravity-logo">
-                    <p>Aim. Shoot. Defy gravity. Bend your orb's path around black holes, wormholes and pulsars across 60 handcrafted levels. Free on Google Play.</p>
-                    <div class="hero-actions">
-                        <a href="/gravityshot" class="btn btn-primary">Discover the game</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.gamedostudio.gravityshot" target="_blank" rel="noopener noreferrer"><img src="assets/images/google-play-badge.png" alt="Get it on Google Play" class="home-gravity-badge"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Featured game: Dip'Dee Survival -->
-        <div class="games-slide home-dipdee" role="group" aria-roledescription="slide" aria-label="3 of 4">
-            <div class="section-container">
-                <div class="home-dipdee-inner reveal-element">
-                    <span class="section-badge">Coming soon</span>
-                    <img src="assets/images/games/dipdee/logo.webp" alt="Dip'Dee Survival" class="home-dipdee-logo">
-                    <p>Crash-landed on a hostile planet, Dip'Dee has one gun and one goal: survive the night. 30 nights, swarms of monsters and six bosses on the way to rescue. Soon free on Google Play.</p>
-                    <div class="hero-actions">
-                        <a href="/dipdee-survival" class="btn btn-primary">Discover the game</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.gamedostudio.dipdeesurvival" target="_blank" rel="noopener noreferrer"><img src="assets/images/google-play-badge.png" alt="Get it on Google Play" class="home-gravity-badge"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Featured game: Quadrille -->
-        <div class="games-slide home-quadrille" role="group" aria-roledescription="slide" aria-label="4 of 4">
-            <div class="section-container">
-                <div class="home-quadrille-inner reveal-element">
-                    <span class="section-badge">Coming soon</span>
-                    <h2 class="home-quadrille-title">Quadrille</h2>
-                    <p>A cozy block puzzle in a garden that changes with the seasons. Fill the lines, let the flowers bloom: 160 levels across 9 gardens, and an endless Classic mode. Soon free on Google Play.</p>
-                    <div class="hero-actions">
-                        <a href="/quadrille" class="btn btn-primary">Discover the game</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.gamedostudio.quadrille" target="_blank" rel="noopener noreferrer"><img src="assets/images/google-play-badge.png" alt="Get it on Google Play" class="home-gravity-badge"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-            </div>
-            <button class="games-arrow prev" aria-label="Previous game"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
-            <button class="games-arrow next" aria-label="Next game"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
-            <div class="games-dots"></div>
-        </section>
-
-        <!-- Follow the development -->
-        <section class="home-follow">
+        <!-- The way (道) -->
+        <section class="home-way">
             <div class="section-container reveal-element">
-                <h2>Follow the development</h2>
-                <p>Gameplay clips, behind-the-scenes and release news, as they happen.</p>
-                <div class="home-follow-links">
-                    <a href="https://x.com/GameDoStudio" target="_blank" rel="noopener" class="btn btn-primary">Follow us on X</a>
-                    <a href="/contact" class="btn btn-outline">Contact us</a>
+                <div class="home-way-kanji" lang="ja" aria-hidden="true">道</div>
+                <div>
+                    <span class="home-way-eyebrow">GameDō · the way of the game</span>
+                    <h2>A small studio from Cebu, one game at a time.</h2>
+                    <p>We make arcade and puzzle games for your phone: quick to pick up, deep enough to keep you coming back. Every game gets its own world and its own rules, from neon shoot-'em-ups to garden puzzles.</p>
+                    <div class="home-way-facts">
+                        <span><b>4</b>games</span>
+                        <span><b>220+</b>levels</span>
+                        <span><b>1</b>out now</span>
+                        <a href="/about" class="btn btn-outline">Meet the studio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio log: update by hand, newest first -->
+        <section class="home-log">
+            <div class="section-container">
+                <div class="home-log-head">
+                    <div>
+                        <span class="home-way-eyebrow">Studio log</span>
+                        <h2>Latest from the studio</h2>
+                    </div>
+                    <a href="https://x.com/GameDoStudio" target="_blank" rel="noopener">Follow us on X &rarr;</a>
+                </div>
+                <div class="home-log-grid">
+                    <a href="/dipdee-survival" class="log-card reveal-element">
+                        <img src="assets/images/games/dipdee/screen-swarm.webp" alt="Dip'Dee Survival: Dip'Dee facing a swarm of monsters" loading="lazy">
+                        <div>
+                            <time datetime="2026-11">November 2026</time>
+                            <h3>Dip'Dee Survival: the Endless Night</h3>
+                            <p>Beat the last boss and one long night opens, harder every 30 seconds. Your time goes on the leaderboard.</p>
+                        </div>
+                    </a>
+                    <a href="/quadrille" class="log-card reveal-element">
+                        <img src="assets/images/games/quadrille/garden-art.webp" alt="Quadrille: the garden puzzle board" loading="lazy">
+                        <div>
+                            <time datetime="2026-11">November 2026</time>
+                            <h3>Meet Quadrille, our cozy block puzzle</h3>
+                            <p>160 levels across 9 gardens that change with the seasons.</p>
+                        </div>
+                    </a>
+                    <a href="/swarm-from-hypervoid-88" class="log-card reveal-element">
+                        <img src="assets/images/games/swarm/art-1-2.webp" alt="Swarm from Hypervoid 88: a fleet above a planet" loading="lazy">
+                        <div>
+                            <time datetime="2026-10">October 2026</time>
+                            <h3>Swarm: six pilots, six playstyles</h3>
+                            <p>Meet the pilots, the ships and the bosses of our next game.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
