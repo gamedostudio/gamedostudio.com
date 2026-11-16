@@ -155,6 +155,36 @@
     sStart();
   }
 
+  // ===== Trailers: play muted while on screen =====
+  var trailers = document.querySelectorAll('video[data-autoplay]');
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (trailers.length > 0 && 'IntersectionObserver' in window && !reduceMotion) {
+    var trailerObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) {
+          if (v.paused && !v.dataset.userPaused) {
+            var p = v.play();
+            if (p && p.catch) p.catch(function () {});
+          }
+        } else if (!v.paused) {
+          v.dataset.autoPaused = '1';
+          v.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    trailers.forEach(function (v) {
+      v.addEventListener('pause', function () {
+        if (v.dataset.autoPaused) { delete v.dataset.autoPaused; return; }
+        v.dataset.userPaused = '1';
+      });
+      v.addEventListener('play', function () { delete v.dataset.userPaused; });
+      trailerObserver.observe(v);
+    });
+  }
+
   // ===== Scroll-Triggered Reveals =====
   var revealElements = document.querySelectorAll('.reveal-element');
 

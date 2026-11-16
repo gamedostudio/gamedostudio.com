@@ -2858,3 +2858,19 @@ a.founder-card:hover {
     white-space: nowrap;
     border: 0;
 }
+
+/* Vertical trailer in the "The game" split */
+.gp-trailer {
+    justify-self: center;
+    width: 100%;
+    max-width: 340px;
+}
+
+.gp-trailer video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--rounded-lg);
+    box-shadow: var(--shadow-hover);
+    background: #000;
+}
