@@ -2863,7 +2863,7 @@ a.founder-card:hover {
 .gp-trailer {
     justify-self: center;
     width: 100%;
-    max-width: 340px;
+    max-width: 160px;
 }
 
 .gp-trailer video {
