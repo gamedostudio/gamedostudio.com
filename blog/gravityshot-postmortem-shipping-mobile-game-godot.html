@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GravityShot Postmortem: Shipping a Mobile Game in Godot 4.6 | GameDō Studio Blog</title>
+    <meta name="description" content="Solo dev postmortem of GravityShot, a mobile puzzle game built in Godot 4.6 over nights and weekends. Scope, gotchas, numbers, and a stolen copy.">
+    <link rel="canonical" href="https://gamedostudio.com/blog/gravityshot-postmortem-shipping-mobile-game-godot">
+    <meta property="og:title" content="GravityShot Postmortem: Shipping a Mobile Game in Godot 4.6 | GameDō Studio Blog">
+    <meta property="og:description" content="Solo dev postmortem of GravityShot, a mobile puzzle game built in Godot 4.6 over nights and weekends. Scope, gotchas, numbers, and a stolen copy.">
+    <meta property="og:url" content="https://gamedostudio.com/blog/gravityshot-postmortem-shipping-mobile-game-godot">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://play-lh.googleusercontent.com/IXlM544yh4FvxhutnFt_tEdbFCGHShwGOOMDH8RbxO3xUA0TgKLtpB430QAw7XS0X9tyW9CmUPo9-gZj1XvsFg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="alternate" type="application/rss+xml" title="GameDō Studio Blog" href="/blog/rss.xml">
+    <link rel="stylesheet" href="/styles.css?v=20261118a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/images/favicon-circle.png">
+    <script>document.documentElement.classList.add('js');</script>
+    <script>
+      (function() {
+        var theme = null;
+        try { theme = localStorage.getItem('theme'); } catch(e) {}
+        if (theme === 'dark' || theme === 'light') {
+          document.documentElement.setAttribute('data-theme', theme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "GravityShot Postmortem: I Shipped a Tiny Mobile Puzzle Game", "description": "Solo dev postmortem of GravityShot, a mobile puzzle game built in Godot 4.6 over nights and weekends. Scope, gotchas, numbers, and a stolen copy.", "image": "https://play-lh.googleusercontent.com/IXlM544yh4FvxhutnFt_tEdbFCGHShwGOOMDH8RbxO3xUA0TgKLtpB430QAw7XS0X9tyW9CmUPo9-gZj1XvsFg", "datePublished": "2026-05-30T03:00:00", "author": {"@type": "Person", "name": "Florian Huet"}, "publisher": {"@type": "Organization", "name": "GameDō Studio", "url": "https://gamedostudio.com"}, "mainEntityOfPage": "https://gamedostudio.com/blog/gravityshot-postmortem-shipping-mobile-game-godot"}</script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <img src="/assets/images/gamedo-logo-transparent.png" alt="GameDō" class="logo-light">
+                    <img src="/assets/images/GameDoStudio-logo-transparent-dark.png" alt="GameDō" class="logo-dark">
+                </div>
+                <span class="nav-logo-text">GameDo Studio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/games">Games</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Switch to dark mode">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <button class="nav-hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main">
+        <article class="blog-post">
+            <header class="blog-post-header">
+                <a href="/blog" class="blog-back">&larr; All posts</a>
+                <h1>GravityShot Postmortem: I Shipped a Tiny Mobile Puzzle Game</h1>
+                <p class="blog-meta">Florian Huet · <time datetime="2026-05-30">May 30, 2026</time> · 7 min read</p>
+            </header>
+            <img class="blog-cover" src="https://play-lh.googleusercontent.com/IXlM544yh4FvxhutnFt_tEdbFCGHShwGOOMDH8RbxO3xUA0TgKLtpB430QAw7XS0X9tyW9CmUPo9-gZj1XvsFg" alt="GravityShot logo art with the title over an orbital arc and a small orb in a starfield" width="1200" height="630">
+            <div class="blog-body">
+<p>I write about other people's indie games on this site as a hobby. Last week I shipped one of my own.</p>
+<p><strong>GravityShot</strong> is a small physics puzzle game built in Godot 4.6, made on nights and weekends, around a day job and a family. It launched on Google Play with almost no marketing, around 50 downloads at the time of writing, and a grand total of <strong>10 cents in revenue</strong>. That is funny on its own. The fact that someone already cloned it is funnier.</p>
+<p>This is the honest version of the postmortem. Not the kind where I pretend everything went to plan and the numbers are about to take off any second. The numbers are what they are. The lessons are real.</p>
+<div style="display:flex;justify-content:center;margin:1.5rem 0"><img src="https://play-lh.googleusercontent.com/zdvwLms7wKswcMH_usWowtWMRkL5Wlukv0kd1wqVu7y_DLm7CZEvmyIxiOhtkJn4TOUV7cUHnZcNJraxVQgr=w1080" alt="GravityShot gameplay: the orb trails light as it slingshots past glowing gravity sources" style="width:340px;height:680px;object-fit:cover;border-radius:0.75rem" loading="lazy"></div>
+
+<h2>The Game in One Paragraph</h2>
+<p>You drag and release to slingshot an orb through space. Black holes pull you in. Wormholes spit you somewhere else. You collect gravity cores to unlock new orbs with different stats: heavier, faster, smaller hitbox, gains speed on bounces. The game ships with <strong>70 hand-designed levels</strong> across a tutorial and six sectors, <strong>9 orbs</strong>, EN and FR localization, and ad-supported unlocks for the trickier skins. No microtransactions in the gameplay path. It is free.</p>
+<h2>What Went Right</h2>
+<h3>Closed testing via the Testers Community</h3>
+<p>The single best decision I made was sending the build into the <strong>Testers Community</strong> for closed testing before going live. The feedback was real, specific, and free. Strangers told me which levels felt unfair, which orbs felt useless, and which animations were too slow. Most of the changes that made the game actually playable came out of that loop.</p>
+<p>If you are a solo dev about to ship a mobile game, do this. Pay the cost in time. Skip the part where you launch into silence and learn nothing.</p>
+<h3>Godot 4.6 mostly held up</h3>
+<p>Godot is now a genuinely viable mobile engine in 2026. The mobile renderer was fast enough for what I needed, the export pipeline worked for both iOS and Android, and the editor stayed out of my way. Things broke (more on that below) but never in ways that would have made me switch engines.</p>
+<p>If you are still picking an engine, our <a href="/blog/godot-vs-unity-vs-unreal-engine-comparison">Godot vs Unity vs Unreal comparison</a> goes deeper on the trade-offs.</p>
+<h3>Cuts saved the project</h3>
+<p>The version of the game in my head had <strong>galaxy levels</strong> (entire systems with multiple gravity sources and warp gates), a meta-progression layer, and a couple of mechanics that never made it in. Cutting them was painful and was 100 percent the right call. What shipped was 70 finished levels and 9 distinct orbs. What did not ship would have been six months of bad design.</p>
+<p>Edmund McMillen's career-long advice on shipping kept echoing in my head. Finish small things. Then finish another one. Then another.</p>
+<h3>Free audio from working indie artists</h3>
+<p>JDSherbert and DavidKBD on itch.io carry an absurd amount of this game's vibe on their backs. Royalty-free, attribution-only, and genuinely good. If you cannot afford an audio designer, this is the move.</p>
+<h2>What Went Wrong</h2>
+<h3>Scope, again, but harder than I expected</h3>
+<p>Designing a single good gravity puzzle takes hours. Designing <strong>60 of them</strong> that ramp in difficulty without repeating themselves takes weeks. I underestimated this by an order of magnitude. The version 1 cut of galaxy levels collapsed under its own design complexity. It was not that I could not build it. I could not <strong>design</strong> it in a way that was actually fun across sixty distinct layouts.</p>
+<p>The lesson I keep coming back to: when you cannot picture ten finished examples of a new mechanic, you do not yet understand the mechanic well enough to ship it.</p>
+<div style="display:flex;justify-content:center;margin:1.5rem 0"><img src="https://play-lh.googleusercontent.com/vaOsgoFws4F5OAMbAJqjr8gnxN1hhg45gz6UPHwMOdF4UXgtLGE76nxlYzgr7L9c5KssxYnHe6CyQVE-PNvY-EU=w1080" alt="GravityShot gameplay: the orb curves around celestial objects and gravity wells" style="width:340px;height:680px;object-fit:cover;border-radius:0.75rem" loading="lazy"></div>
+
+<h3>Optimization on cheap Android devices</h3>
+<p>The orbs leave particle trails. The celestial objects use custom shaders for the black hole, wormhole, and lensing effects. On a flagship phone, it looks great. On a five-year-old budget Android, the framerate would tank in any scene with three or more gravity sources active.</p>
+<p>Fixing this meant a lot of profiling, a glow-mode toggle in the settings, and merciless cuts to particle counts. It also meant accepting that the game cannot look as good as the marketing screenshots on every device. Mobile is brutal that way.</p>
+<h3>Marketing, talking about the game, impostor syndrome</h3>
+<p>This is the hardest section to write honestly.</p>
+<p>I run a website that covers indie games. I know how to talk about other people's games. The second the game in question was <strong>mine</strong>, I froze. I had a hundred half-written tweets that I never sent. I launched with almost no announcement. I am writing this postmortem days after launch, not on launch day, because the launch-day version was paralyzing.</p>
+<p>The impostor syndrome of shipping a small mobile game is real. The voice in your head says "this is not a real game, this is not impressive enough to talk about." That voice is wrong, but knowing it is wrong does not make it shut up.</p>
+<h3>The day-job-and-family math</h3>
+<p>I have a 9 to 5. I have a family. I have a website to write for. The time I had for GravityShot was the hours after the kid was asleep and before I was too tired to think.</p>
+<p>Every feature on the cutting room floor got cut not because it was bad, but because there were not enough hours. If you are an indie dev with a life, this is the only thing that actually matters. <strong>Scope is not a number of features. Scope is the number of hours you actually have.</strong></p>
+<h2>The Numbers (Such As They Are)</h2>
+<ul>
+<li><strong>Downloads at time of writing</strong>: under 50</li>
+<li><strong>Revenue</strong>: 10 cents</li>
+<li><strong>Marketing spend</strong>: 0</li>
+<li><strong>Total project cost</strong>: basically zero (free engine, free tools, free music)</li>
+<li><strong>Time investment</strong>: hard to say. Months of evenings. I stopped counting somewhere along the way.</li>
+</ul>
+<p>I am not going to pretend the launch numbers are impressive. They are not. They are also exactly what you should expect when a solo dev ships a small mobile game with no marketing into the most saturated app market in the history of software.</p>
+<p>The point was never the numbers. The point was fun and finishing.</p>
+<h2>The Weird Part: A Copy Showed Up</h2>
+<p>A couple of weeks after I started closed testing, I came across a game in the wild with the same mechanics, the same vibe, and a different name.</p>
+<p>I am not going to link it or name names because I do not want to give it traffic. I also have no proof it is a deliberate copy versus someone arriving at a parallel idea, and the difference does not change my next move.</p>
+<p>What I will say: the moment you put your game in front of strangers, even in a closed test, you are putting the idea in the wild. If an idea is small enough to clone, it will get cloned. The defense is not to keep the idea secret. The defense is to be the one who actually finishes the version that feels good to play.</p>
+<div style="display:flex;justify-content:center;margin:1.5rem 0"><img src="https://play-lh.googleusercontent.com/pRSAXtVa4oSfvUU68j66q97GSzjZQ33UehYpHweT0ByNn1NO3UR742CmVIfU4btXw8O0zxkCsSjUOhgch5F7fmA=w1080" alt="GravityShot's orb selection screen showing the Solar orb and its stats" style="width:340px;height:680px;object-fit:cover;border-radius:0.75rem" loading="lazy"></div>
+
+<h2>What I'd Do Differently</h2>
+<p>Three things, ordered by how hard they are to apply.</p>
+<p><strong>One: announce louder.</strong> Even when it feels cringeworthy. Even when impostor syndrome is screaming. The launch-day silence is a self-inflicted wound. Half-written tweets in the drafts folder is the lowest-yield form of marketing in existence.</p>
+<p><strong>Two: design ten levels before committing to a mechanic.</strong> If I had forced myself to design ten finished galaxy levels on paper before building any of them, I would have cut the whole feature six months earlier. The cost of finding out late is enormous.</p>
+<p><strong>Three: ship more closed-test builds, and ship them earlier.</strong> The Testers Community feedback was so valuable that the only mistake was not getting in there sooner. The earliest playable thing should already be in front of strangers.</p>
+<h2>Try It</h2>
+<p><a href="https://play.google.com/store/apps/details?id=com.gamedostudio.gravityshot">GravityShot is live on Google Play.</a> It is free. It has 70 levels, 9 orbs, ad-supported skin unlocks if you want the harder modes, and exactly zero microtransactions in the gameplay path.</p>
+<p>If you play it, the most useful thing you can do is leave a review with the bug, the level, or the moment that broke your flow. I will read every word.</p>
+<p>The point was never the numbers. The point was fun and finishing.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="nav-logo-icon"><img src="/assets/images/gamedo-logo-transparent.png" alt="GameDō" class="logo-light"><img src="/assets/images/GameDoStudio-logo-transparent-dark.png" alt="GameDō" class="logo-dark"></div>
+                    <span>Gamedō Studio</span>
+                </div>
+                <p class="footer-tagline">Indie games, made with care.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <a href="mailto:contact@gamedostudio.com">contact@gamedostudio.com</a>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://x.com/GameDoStudio" class="social-link" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://github.com/GameDoStudio" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                    <a href="https://gamedostudio.itch.io/" class="social-link" target="_blank" rel="noopener" aria-label="itch.io">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.058 2.436-2.336 0 1.278 1.07 2.336 2.4 2.336 1.328 0 2.362-1.058 2.362-2.336 0 1.278 1.105 2.336 2.434 2.336h.478c1.33 0 2.434-1.058 2.434-2.336 0 1.278 1.034 2.336 2.362 2.336 1.33 0 2.4-1.058 2.4-2.336 0 1.278 1.106 2.336 2.435 2.336C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.622-2.08-2.99-3.13-3.612a55.03 55.03 0 0 0-8.87-.338c-2.88 0-7.222.146-8.87.338z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCxA5IRppJs3cn4VRS00mbNg" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@gamedostudio" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year"></span> Gamedō Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/animations.js?v=20261118a" defer></script>
+</body>
+</html>

@@ -32,4 +32,10 @@
     <loc>https://gamedostudio.com/quadrille</loc>
     <priority>0.9</priority>
   </url>
+
+  <!-- blog:start -->
+  <url><loc>https://gamedostudio.com/blog</loc></url>
+  <url><loc>https://gamedostudio.com/blog/gravityshot-postmortem-shipping-mobile-game-godot</loc></url>
+  <url><loc>https://gamedostudio.com/blog/how-to-port-indie-game-consoles-2026</loc></url>
+  <!-- blog:end -->
 </urlset>

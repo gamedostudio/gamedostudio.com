@@ -22,7 +22,7 @@
   var currentPath = window.location.pathname;
   document.querySelectorAll('.nav-links a').forEach(function (link) {
     var href = link.getAttribute('href');
-    if (href === currentPath || (href === '/' && (currentPath === '/index.html' || currentPath === '/'))) {
+    if (href === currentPath || (href === '/blog' && currentPath.indexOf('/blog/') === 0) || (href === '/' && (currentPath === '/index.html' || currentPath === '/'))) {
       link.classList.add('active');
     }
   });

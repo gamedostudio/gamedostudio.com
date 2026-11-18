@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>GameDō Studio Blog</title>
+    <link>https://gamedostudio.com/blog</link>
+    <description>Devlogs, postmortems and game development notes from GameDō Studio.</description>
+    <item>
+      <title>GravityShot Postmortem: I Shipped a Tiny Mobile Puzzle Game</title>
+      <link>https://gamedostudio.com/blog/gravityshot-postmortem-shipping-mobile-game-godot</link>
+      <guid>https://gamedostudio.com/blog/gravityshot-postmortem-shipping-mobile-game-godot</guid>
+      <pubDate>Sat, 30 May 2026 03:00:00 +0000</pubDate>
+      <description>I shipped a small physics puzzle game in Godot 4.6, on nights and weekends, around a day job and a family. Here is what went right, what went wrong, and the cent of revenue that proves it.</description>
+    </item>
+    <item>
+      <title>How Much Does It Cost to Port an Indie Game to Consoles? (2026)</title>
+      <link>https://gamedostudio.com/blog/how-to-port-indie-game-consoles-2026</link>
+      <guid>https://gamedostudio.com/blog/how-to-port-indie-game-consoles-2026</guid>
+      <pubDate>Thu, 26 Mar 2026 15:00:00 +0000</pubDate>
+      <description>A porting house charges $10,000 to $50,000 per platform. On Unity or Unreal, a port mostly costs time: 3 to 6 months per console. Here is the full 2026 breakdown, from dev kits to certification.</description>
+    </item>
+    <item>
+      <title>Game Feel 101: Why Your Indie Game Doesn&#x27;t Feel Satisfying Yet</title>
+      <link>https://gamedostudio.com/blog/game-feel-juice-guide-indie-devs</link>
+      <guid>https://gamedostudio.com/blog/game-feel-juice-guide-indie-devs</guid>
+      <pubDate>Fri, 06 Mar 2026 15:00:00 +0000</pubDate>
+      <description>Screen shake, hitstop, particles, and camera tricks. The six techniques that separate good indie games from great ones.</description>
+    </item>
+    <item>
+      <title>Godot vs Unity vs Unreal Engine: Which One Should You Pick in 2026?</title>
+      <link>https://gamedostudio.com/blog/godot-vs-unity-vs-unreal-engine-comparison</link>
+      <guid>https://gamedostudio.com/blog/godot-vs-unity-vs-unreal-engine-comparison</guid>
+      <pubDate>Fri, 13 Feb 2026 03:00:00 +0000</pubDate>
+      <description>A no-nonsense breakdown of the three biggest game engines for indie developers. Pricing, performance, learning curve, and the games that prove each one works.</description>
+    </item>
+  </channel>
+</rss>
