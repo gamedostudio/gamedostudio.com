@@ -15,7 +15,7 @@ seo_description: "Solo dev postmortem of GravityShot, a mobile puzzle game built
 lang: en
 ---
 
-I write about other people's indie games on this site as a hobby. Last week I shipped one of my own.
+Last week I shipped a game of my own.
 
 **GravityShot** is a small physics puzzle game built in Godot 4.6, made on nights and weekends, around a day job and a family. It launched on Google Play with almost no marketing, around 50 downloads at the time of writing, and a grand total of **10 cents in revenue**. That is funny on its own. The fact that someone already cloned it is funnier.
 
@@ -71,13 +71,13 @@ Fixing this meant a lot of profiling, a glow-mode toggle in the settings, and me
 
 This is the hardest section to write honestly.
 
-I run a website that covers indie games. I know how to talk about other people's games. The second the game in question was **mine**, I froze. I had a hundred half-written tweets that I never sent. I launched with almost no announcement. I am writing this postmortem days after launch, not on launch day, because the launch-day version was paralyzing.
+The second I had to talk about a game that was **mine**, I froze. I had a hundred half-written tweets that I never sent. I launched with almost no announcement. I am writing this postmortem days after launch, not on launch day, because the launch-day version was paralyzing.
 
 The impostor syndrome of shipping a small mobile game is real. The voice in your head says "this is not a real game, this is not impressive enough to talk about." That voice is wrong, but knowing it is wrong does not make it shut up.
 
 ### The day-job-and-family math
 
-I have a 9 to 5. I have a family. I have a website to write for. The time I had for GravityShot was the hours after the kid was asleep and before I was too tired to think.
+I have a 9 to 5. I have a family. The time I had for GravityShot was the hours after the kid was asleep and before I was too tired to think.
 
 Every feature on the cutting room floor got cut not because it was bad, but because there were not enough hours. If you are an indie dev with a life, this is the only thing that actually matters. **Scope is not a number of features. Scope is the number of hours you actually have.**
 
